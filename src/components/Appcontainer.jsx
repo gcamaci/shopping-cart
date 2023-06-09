@@ -44,7 +44,7 @@ const AppContainer = () => {
           <Navbar search={searchEvents} result={changeResult}></Navbar>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile artistInfo={shows}/>} />
             </Routes>
         </BrowserRouter>
       </div>

@@ -1,8 +1,8 @@
 
-const Profile = () => {
+const Profile = ({artistInfo}) => {
     return (
       <div>
-        <h1>Hello from Profile</h1>
+        <h1>{artistInfo.name}</h1>
       </div>
     );
   };
