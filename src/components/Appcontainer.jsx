@@ -12,10 +12,10 @@ const AppContainer = () => {
 
     const searchEvents = async () => {
       try {
-        const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=mmsBfHd9j3ILnRlZ21Q1GxO06NY8IVJk&keyword=${searchResult}`,{mode:'cors'});
+        const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_APP_MY_API_KEY}&keyword=${searchResult}`,{mode:'cors'});
         const data = await response.json();
         const code = data._embedded.attractions[0].id
-        const eventResponse = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${code}&apikey=mmsBfHd9j3ILnRlZ21Q1GxO06NY8IVJk`,{mode:'cors'});
+        const eventResponse = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${code}&apikey=${import.meta.env.VITE_APP_MY_API_KEY}`,{mode:'cors'});
         const eventData = await eventResponse.json();
 
         const showData = {
