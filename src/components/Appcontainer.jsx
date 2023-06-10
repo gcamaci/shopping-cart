@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar"
 import Home from "../pages/Home";
 import Profile from '../pages/Profile';
+import Comedy from '../pages/Comedy'
+import Sports from '../pages/Sports'
 import { useState, useEffect } from "react";
 import { formatEvents } from "../utils/formatEvent";
 
@@ -45,6 +47,7 @@ const AppContainer = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile artistInfo={shows}/>} />
+              <Route path="/comedy" element={<Comedy />}/>
             </Routes>
         </BrowserRouter>
       </div>
