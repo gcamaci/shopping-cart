@@ -2,15 +2,35 @@ import { Link } from "react-router-dom"
 
 const Navbar = ({ search, result }) => {
     return (
-        <div className="flex flex-col h-20 border border-red-300 justify-center items-center">
+        <div 
+        className="
+        flex h-20 
+        justify-around 
+        items-center 
+        bg-darkBlue
+        text-white
+        transition duration-500
+        hover:ease-in-out
+        hover:bg-white 
+        hover:text-black
+        ">
             <div>
                 <input
                 type="search"
                 id="search-bar"
-                onChange={result}>
+                onChange={result}
+                className="
+                rounded-full
+                shadow-lg
+                shadow-zinc
+                border
+                border[#d3d3dc]
+                
+                "
+                >
                 
                 </input>
-                <Link className="border border-red-300" onClick={search} to='/profile'>Search</Link>
+                <Link className="border " onClick={search} to='/profile'>Search</Link>
             </div>
             <ul className="flex">
                 <li>

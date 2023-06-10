@@ -4,7 +4,6 @@ import Navbar from "./Navbar"
 import Home from "../pages/Home";
 import Profile from '../pages/Profile';
 import Comedy from '../pages/Comedy'
-import Sports from '../pages/Sports'
 import { useState, useEffect } from "react";
 import { formatEvents } from "../utils/formatEvent";
 
