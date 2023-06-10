@@ -4,6 +4,10 @@ import Navbar from "./Navbar"
 import Home from "../pages/Home";
 import Profile from '../pages/Profile';
 import Comedy from '../pages/Comedy'
+import ConcertPage from "../pages/Concerts";
+import SportsPage from "../pages/Sports";
+import TheaterPage from "../pages/Theatre";
+import Cart from "../pages/Cart";
 import { useState, useEffect } from "react";
 import { formatEvents } from "../utils/formatEvent";
 
@@ -47,6 +51,10 @@ const AppContainer = () => {
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile artistInfo={shows}/>} />
               <Route path="/comedy" element={<Comedy />}/>
+              <Route path="/concerts" element={<ConcertPage />} />
+              <Route path="/sports" element={<SportsPage />} />
+              <Route path="/theatre" element={<TheaterPage />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>
       </div>
