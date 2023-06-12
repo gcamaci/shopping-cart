@@ -13,12 +13,17 @@ import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
     const [searchResult, setSearchResult] = useState('');
-    const [shows,setShows] = useState({})
+    const [shows,setShows] = useState({
+      name:'',
+      id_code: 0,
+      upcoming_events: []
+    })
 
     const searchEvents = async () => {
       try {
         const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_APP_MY_API_KEY}&keyword=${searchResult}`,{mode:'cors'});
         const data = await response.json();
+        console.log(data)
         const code = data._embedded.attractions[0].id
         const eventResponse = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${code}&apikey=${import.meta.env.VITE_APP_MY_API_KEY}`,{mode:'cors'});
         const eventData = await eventResponse.json();
@@ -28,7 +33,7 @@ const AppContainer = () => {
           id_code: data._embedded.attractions[0].id,
           upcoming_events: formatEvents(eventData._embedded.events)
         };
-        setShows(showData)
+        setShows(showData) 
       } catch (error){
         console.error('Error Fetching events:',error)
         throw error
@@ -39,6 +44,8 @@ const AppContainer = () => {
       setSearchResult(e.target.value)
       
     }
+
+
     useEffect(() => {
       console.log(searchResult)
       console.log(shows)
@@ -48,7 +55,7 @@ const AppContainer = () => {
         <BrowserRouter>
           <Navbar search={searchEvents} result={changeResult}></Navbar>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home setProfile={setShows}/>} />
               <Route path="/profile" element={<Profile artistInfo={shows}/>} />
               <Route path="/comedy" element={<Comedy />}/>
               <Route path="/concerts" element={<ConcertPage />} />
