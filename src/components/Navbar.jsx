@@ -2,62 +2,35 @@ import { Link } from "react-router-dom"
 import searchIcon from "../assets/search.png"
 const Navbar = ({ search, result }) => {
     return (
-        <div 
-        className="
-        flex 
-        justify-around 
-        items-center 
-        bg-darkBlue
-        text-white
-        transition duration-500
-        hover:ease-in-out
-        hover:bg-white 
-        hover:text-black
-        p-4
-        border-b
-        border-zinc-200
-        ">
-            <div className="
-            flex
-            rounded-full
-            shadow-lg
-            shadow-zinc
-            border
-            border-zinc-200
-            text-black
-            hover:border[#d3d3dc]-300
-            bg-white
-            p-2
-            w-1/4
-            ">
+        <div>
+            <div>
                 <input
                 type="search"
                 id="search-bar"
                 onChange={result}
-                className=" w-3/4"
+                className=""
                 placeholder="Search Artist By Name"
-                
                 >
                 
                 </input>
-                <Link className="w-1/4 flex justify-center " onClick={search} to='/profile'>
-                    <img src={searchIcon} className="bg-white"></img>
+                <Link onClick={search} to='/profile'>
+                    <img src={searchIcon}></img>
                 </Link>
             </div>
-            <ul className="flex justify-between w-1/3 p-2 gap-2">
-                <li className="border border-transparent hover:border-[#ce3197] p-1 hover:bg-[#f5d5ea] rounded-md hover:text-[#ce3197]">
+            <ul className="">
+                <li className="">
                     <Link to="/">Home</Link>
                 </li>
-                <li className="border border-transparent hover:border-[#ce3197] p-1 hover:bg-[#f5d5ea] rounded-md hover:text-[#ce3197]">
+                <li className="">
                     <Link to="/sports">Sports</Link>
                 </li>
-                <li className="border border-transparent hover:border-[#ce3197] p-1 hover:bg-[#f5d5ea] rounded-md hover:text-[#ce3197]">
+                <li className="">
                     <Link to="/concerts">Concerts</Link>
                 </li>
-                <li className="border border-transparent hover:border-[#ce3197] p-1 hover:bg-[#f5d5ea] rounded-md hover:text-[#ce3197]">
+                <li className="">
                     <Link to="/comedy">Comedy</Link>
                 </li>
-                <li className="border border-transparent hover:border-[#ce3197] p-1 hover:bg-[#f5d5ea] rounded-md hover:text-[#ce3197]">
+                <li className="">
                     <Link to="/theatre">Theater</Link>
                 </li>
                 <Link to="/cart">Cart</Link>
