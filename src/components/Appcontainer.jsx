@@ -22,9 +22,9 @@ const AppContainer = () => {
     //debounce hook
     const debouncedSearchTerm = useDebounce(searchResult,300)
 
-    const searchEvents = async () => {
+    const searchEvents = async (searchWord) => {
       try {
-        const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_APP_MY_API_KEY}&keyword=${searchResult}`,{mode:'cors'});
+        const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_APP_MY_API_KEY}&keyword=${searchWord}`,{mode:'cors'});
         const data = await response.json();
         console.log(data)
         const code = data._embedded.attractions[0].id
@@ -50,9 +50,10 @@ const AppContainer = () => {
 
 
     useEffect(() => {
-      console.log(searchResult)
-      console.log(shows)
-    },[searchResult,shows])
+      if(debouncedSearchTerm){
+        searchEvents(debouncedSearchTerm)
+      }
+    },[debouncedSearchTerm])
     return (
       <div>
         <BrowserRouter>
