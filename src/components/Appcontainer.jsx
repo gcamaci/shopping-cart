@@ -9,6 +9,7 @@ import SportsPage from "../pages/Sports";
 import TheaterPage from "../pages/Theatre";
 import Cart from "../pages/Cart";
 import { useState, useEffect } from "react";
+import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
@@ -16,8 +17,10 @@ const AppContainer = () => {
     const [shows,setShows] = useState({
       name:'',
       id_code: 0,
-      upcoming_events: []
+      upcoming_events: []  
     })
+    //debounce hook
+    const debouncedSearchTerm = useDebounce(searchResult,300)
 
     const searchEvents = async () => {
       try {
