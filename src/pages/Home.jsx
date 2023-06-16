@@ -7,12 +7,11 @@ const Home = ({setProfile}) => {
     
     return (
         <div>
-            <div className="">
-                <div><img src={mlb} className=""></img></div>
-                <div className=""> 
-                    <h1 className="">Catch MLB Tickets Today!</h1>
-                    <h2 className="">Buy MLB Tickets, <span>Earn Rewards</span></h2>
-                    <Link className="" to="/sports">Find Tickets</Link>
+            <div className="baseball-banner">
+                <div className="baseball-text-container"> 
+                    <h1 className="banner-title">Catch MLB Tickets Today!</h1>
+                    <h2 className="banner-caption">Buy MLB Tickets, <span className="span">Earn Rewards</span></h2>
+                    <Link className="banner-link" to="/sports">Find Tickets</Link>
                 </div>
             </div>
 
