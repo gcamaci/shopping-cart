@@ -17,7 +17,7 @@ const AppContainer = () => {
     const [shows,setShows] = useState({
       name:'',
       id_code: 0,
-      upcoming_events: []  
+      upcoming_events: [{}]  
     })
     //debounce hook
     const debouncedSearchTerm = useDebounce(searchResult,300)
@@ -48,6 +48,13 @@ const AppContainer = () => {
       
     }
 
+    const clearSearch = () =>{
+      setSearchResult('')
+      setShows({})
+    }
+    
+
+    
 
     useEffect(() => {
       if(debouncedSearchTerm){
@@ -57,9 +64,9 @@ const AppContainer = () => {
     return (
       <div>
         <BrowserRouter>
-          <Navbar search={searchEvents} result={changeResult}></Navbar>
+          <Navbar search={searchEvents} result={changeResult} clear={clearSearch}></Navbar>
             <Routes>
-              <Route path="/" element={<Home setProfile={setShows}/>} />
+              <Route path="/" element={<Home setProfile={setSearchResult}/>} />
               <Route path="/profile" element={<Profile artistInfo={shows}/>} />
               <Route path="/comedy" element={<Comedy />}/>
               <Route path="/concerts" element={<ConcertPage />} />

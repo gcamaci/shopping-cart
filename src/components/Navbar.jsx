@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import searchIcon from "../assets/search.png"
 import "../styles/navbar.css"
-const Navbar = ({ search, result }) => {
+const Navbar = ({ search, result}) => {
     return (
         <div className="header">
 

@@ -1,11 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .baseball-banner{
-    width: 100vw;
-    height: 30vw;
+    
+    padding: 75px;
     display: flex;
     align-items: center;
     padding-left: 40px;
@@ -42,4 +43,36 @@
     font: 1.5rem;
     color: white;
     background-color: #ce3197;
+}
+
+
+.event-slide-container{
+    padding:40px;
+}
+.category-container{
+    display: flex;
+    list-style:none;
+    gap: 10px;
+    font-size: 1.25rem;
+}
+
+.event-container{
+    display: flex;
+    padding-top: 10px;
+    gap: 25px;
+    
+    
+}
+
+.slide-card{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+}
+
+.card-img{
+   width: 100%;
+   flex: 2;
+   
 }
