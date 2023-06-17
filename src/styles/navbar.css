@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    height: 5vh;
+    background: #04092c;
+    color: white;
+    
+}
+.search-container{
+    
+    width: 30%;
+    flex-grow: 1;
+    display: flex;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: white;
+}
+.search-bar{
+    flex-grow:1;
+    border: none;
+}
+.logo{
+    flex-grow: 1;
+}
+.link-container{
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+   
+    
+}
+.list-item{
+    list-style: none;
+}
+.link-item {
+    text-decoration: none;
+    color: white;
+    
+}

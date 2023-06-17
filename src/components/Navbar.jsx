@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom"
 import searchIcon from "../assets/search.png"
+import "../styles/navbar.css"
 const Navbar = ({ search, result }) => {
     return (
-        <div>
-            <div>
+        <div className="header">
+
+            <div className="logo">
+                <h1>Vivid Views</h1>
+
+            </div>
+            <div className="search-container">
                 <input
                 type="search"
                 id="search-bar"
                 onChange={result}
-                className=""
+                className="search-bar"
                 placeholder="Search Artist By Name"
                 >
                 
@@ -17,23 +23,23 @@ const Navbar = ({ search, result }) => {
                     <img src={searchIcon}></img>
                 </Link>
             </div>
-            <ul className="">
-                <li className="">
-                    <Link to="/">Home</Link>
+            <ul className="link-container">
+                <li className="list-item">
+                    <Link className="link-item" to="/">Home</Link>
                 </li>
-                <li className="">
-                    <Link to="/sports">Sports</Link>
+                <li className="list-item">
+                    <Link className="link-item" to="/sports">Sports</Link>
                 </li>
-                <li className="">
-                    <Link to="/concerts">Concerts</Link>
+                <li className="list-item">
+                    <Link className="link-item" to="/concerts">Concerts</Link>
                 </li>
-                <li className="">
-                    <Link to="/comedy">Comedy</Link>
+                <li className="list-item">
+                    <Link className="link-item" to="/comedy">Comedy</Link>
                 </li>
-                <li className="">
-                    <Link to="/theatre">Theater</Link>
+                <li className="list-item">
+                    <Link className="link-item" to="/theatre">Theater</Link>
                 </li>
-                <Link to="/cart">Cart</Link>
+                <Link className="link-item" to="/cart">Cart</Link>
             </ul>
          
         </div>
