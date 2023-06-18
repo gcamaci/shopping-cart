@@ -47,7 +47,7 @@ const Home = ({setProfile}) => {
                 </ul>
                 <div className="event-container">
                     {attractionList.map((attraction,index) => {
-                        if(index < 4){
+                        if(index < 5){
                             return <div key={attraction.id} id={attraction.id} className="slide-card">
                                 <img className="card-img" src={attraction.images[0].url}></img>
                                 <div className="text-container">
