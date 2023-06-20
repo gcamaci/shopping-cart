@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import mlb from "../assets/mlbhero.png"
+import { RewardsBanner } from "../components/RewardsBanner"
 import "../styles/home.css"
 import { useEffect, useState } from "react"
 
@@ -47,7 +47,7 @@ const Home = ({setProfile}) => {
                 </ul>
                 <div className="event-container">
                     {attractionList.map((attraction,index) => {
-                        if(index < 5){
+                        if(index < 4){
                             return <div key={attraction.id} id={attraction.id} className="slide-card">
                                 <img className="card-img" src={attraction.images[0].url}></img>
                                 <div className="text-container">
@@ -60,7 +60,7 @@ const Home = ({setProfile}) => {
                 </div>
 
             </div>
-
+            <RewardsBanner></RewardsBanner>      
         </div>
     )
 }

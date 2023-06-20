@@ -76,3 +76,16 @@
    flex: 2;
    
 }
+
+.banner-container{
+    padding: 40px;
+    
+}
+
+.banner{
+    background-color: #ce3197;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
