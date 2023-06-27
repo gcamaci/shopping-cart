@@ -13,6 +13,7 @@ import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
+    const [currentEvent, setEvent] = useState([])
     const [searchResult, setSearchResult] = useState('');
     const [shows,setShows] = useState({
       name:'',
