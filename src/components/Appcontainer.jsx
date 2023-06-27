@@ -8,20 +8,23 @@ import ConcertPage from "../pages/Concerts";
 import SportsPage from "../pages/Sports";
 import TheaterPage from "../pages/Theatre";
 import Cart from "../pages/Cart";
+import Shop from "../pages/Shop"
 import { useState, useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
-    const [currentEvent, setEvent] = useState([])
-    const [searchResult, setSearchResult] = useState('');
+    const [currentEvent, setCurrentEvent] = useState([])
+    const [searchResult, setSearchResult] = useState('')
+    //debounce hook, delay the search term by 3 seconds 
+    const debouncedSearchTerm = useDebounce(searchResult,300)
     const [shows,setShows] = useState({
       name:'',
       id_code: 0,
       upcoming_events: [{}]  
     })
-    //debounce hook
-    const debouncedSearchTerm = useDebounce(searchResult,300)
+    
+    
 
     const searchEvents = async (searchWord) => {
       try {
@@ -74,6 +77,7 @@ const AppContainer = () => {
               <Route path="/sports" element={<SportsPage />} />
               <Route path="/theatre" element={<TheaterPage />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/shop" element={<Shop />} />
             </Routes>
         </BrowserRouter>
       </div>
