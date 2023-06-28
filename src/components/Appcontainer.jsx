@@ -14,7 +14,7 @@ import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
-    const [currentEvent, setCurrentEvent] = useState([])
+    //const [currentEvent, setCurrentEvent] = useState([])
     const [searchResult, setSearchResult] = useState('')
     //debounce hook, delay the search term by 3 seconds 
     const debouncedSearchTerm = useDebounce(searchResult,300)
@@ -24,8 +24,6 @@ const AppContainer = () => {
       upcoming_events: [{}]  
     })
     
-    
-
     const searchEvents = async (searchWord) => {
       try {
         const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_APP_MY_API_KEY}&keyword=${searchWord}`,{mode:'cors'});
@@ -57,9 +55,6 @@ const AppContainer = () => {
       setShows({})
     }
     
-
-    
-
     useEffect(() => {
       if(debouncedSearchTerm){
         searchEvents(debouncedSearchTerm)

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const Profile = ({artistInfo}) => {
  
   console.log(artistInfo.upcoming_events)
@@ -8,7 +8,12 @@ const Profile = ({artistInfo}) => {
       <p>{show.date}</p>
       <p>{show.venue}</p>
       <p>{show.time}</p>
+      <div>
+      <Link to="/profile">See Tickets</Link>
+      </div>
+      
     </div>
+    
   ))
   return (
     <div>
