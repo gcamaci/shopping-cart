@@ -8,13 +8,13 @@ import ConcertPage from "../pages/Concerts";
 import SportsPage from "../pages/Sports";
 import TheaterPage from "../pages/Theatre";
 import Cart from "../pages/Cart";
-import Shop from "../pages/Shop"
+import ShopView from "../pages/Shop"
 import { useState, useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
 
 const AppContainer = () => {
-    //const [currentEvent, setCurrentEvent] = useState([])
+    const [currentEvent, setCurrentEvent] = useState('')
     const [searchResult, setSearchResult] = useState('')
     //debounce hook, delay the search term by 3 seconds 
     const debouncedSearchTerm = useDebounce(searchResult,300)
@@ -54,7 +54,10 @@ const AppContainer = () => {
       setSearchResult('')
       setShows({})
     }
-    
+    const searchCode = (e) => {
+      setCurrentEvent(e.target.id)
+      console.log(e.target.id)
+    }
     useEffect(() => {
       if(debouncedSearchTerm){
         searchEvents(debouncedSearchTerm)
@@ -66,13 +69,13 @@ const AppContainer = () => {
           <Navbar search={searchEvents} result={changeResult} clear={clearSearch}></Navbar>
             <Routes>
               <Route path="/" element={<Home setProfile={setSearchResult}/>} />
-              <Route path="/profile" element={<Profile artistInfo={shows}/>} />
+              <Route path="/profile" element={<Profile artistInfo={shows} getEventCode={searchCode}/>} />
               <Route path="/comedy" element={<Comedy />}/>
               <Route path="/concerts" element={<ConcertPage />} />
               <Route path="/sports" element={<SportsPage />} />
               <Route path="/theatre" element={<TheaterPage />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop" element={<ShopView shopCode={currentEvent} />} />
             </Routes>
         </BrowserRouter>
       </div>

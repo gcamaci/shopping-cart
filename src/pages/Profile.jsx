@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const Profile = ({artistInfo}) => {
+const Profile = ({artistInfo, getEventCode}) => {
  
   console.log(artistInfo.upcoming_events)
   const shows = artistInfo.upcoming_events.map((show,index) => (
@@ -9,7 +9,7 @@ const Profile = ({artistInfo}) => {
       <p>{show.venue}</p>
       <p>{show.time}</p>
       <div>
-      <Link to="/profile">See Tickets</Link>
+      <Link to="/shop" id={show.show_id} onClick={getEventCode}>See Tickets</Link>
       </div>
       
     </div>

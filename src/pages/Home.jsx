@@ -58,7 +58,6 @@ const Home = ({setProfile}) => {
                         }
                     })}
                 </div>
-
             </div>
             <RewardsBanner></RewardsBanner>      
         </div>
