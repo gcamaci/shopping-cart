@@ -1,0 +1,14 @@
+.profile-page{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px;
+}
+
+.page-wrapper{
+    border: 1px solid red ;
+    grid-column:2/6 ;
+}
+.artist-banner{
+    height: 200px;
+    border: 1px solid green;
+}
