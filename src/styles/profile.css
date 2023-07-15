@@ -1,14 +1,47 @@
 .profile-page{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 10px;
+    grid-template-columns: repeat(12,1fr);
+    
+    
 }
 
 .page-wrapper{
-    border: 1px solid red ;
-    grid-column:2/6 ;
+    
+    grid-column:4/10 ;
 }
 .artist-banner{
-    height: 200px;
-    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.artist-img{
+    width: 100%;
+    border-radius: 16px ;
+    height: 300px;
+
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.event-card{
+    border:1px solid red;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.date-time{
+   flex: 1;
+}
+.event-tag{
+    flex: 2;
+}
+.shop-link{
+   flex:1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }

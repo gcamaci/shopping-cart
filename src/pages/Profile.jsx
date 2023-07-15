@@ -5,12 +5,17 @@ const Profile = ({artistInfo, getEventCode}) => {
   console.log(artistInfo.upcoming_events)
   console.log(artistInfo)
   const shows = artistInfo.upcoming_events.map((show,index) => (
-    <div key={index}>
-      <p>{artistInfo.name}</p>
-      <p>{show.date}</p>
-      <p>{show.venue}</p>
-      <p>{show.time}</p>
-      <div>
+    <div className="event-card" key={index}>
+      <div className="date-time">
+        <p>{show.date}</p>
+        <p>{show.time}</p>
+      </div>
+      <div className="event-tag">
+        <p>{artistInfo.name}</p>
+        <p>{show.venue}</p>
+      </div>
+      
+      <div className="shop-link">
       <Link to="/shop" id={show.show_id} onClick={getEventCode}>See Tickets</Link>
       </div>
     </div>
@@ -25,10 +30,11 @@ const Profile = ({artistInfo, getEventCode}) => {
             <p>Upcoming Shows {artistInfo.upcoming_events.length}</p>
 
           </div>
-          
+          <img className="artist-img" src={artistInfo.image}></img>
+        
 
         </div>
-        <div>
+        <div className="card-container">
           {shows}
         </div>
       </div>
