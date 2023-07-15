@@ -8,7 +8,11 @@ const Profile = ({artistInfo, getEventCode}) => {
     <div className="event-card" key={index}>
       <div className="date-time">
         <p>{show.date}</p>
-        <p>{show.time}</p>
+        <div className="day-time">
+          <p>{show.day}</p>
+          <p>{show.time}</p>
+        </div>
+        
       </div>
       <div className="event-tag">
         <p>{artistInfo.name}</p>
