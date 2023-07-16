@@ -24,12 +24,14 @@
 .card-container{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
 }
 .event-card{
-    border:1px solid red;
+    
     display: flex;
     justify-content: space-between;
+    height: 75px;
+    align-items: center;
     
 }
 .day-time{
@@ -45,6 +47,17 @@
 .shop-link{
    flex:1;
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center;
+
+}
+
+.event-btn{
+    text-align: center;
+    border: 1px solid rgb(239, 56, 193);
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(239, 56, 193);
 }

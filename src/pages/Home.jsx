@@ -13,7 +13,6 @@ const Home = ({setProfile}) => {
         const getEventsFromGenre = async () => {
             const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=${genre}&size=40&apikey=${import.meta.env.VITE_APP_MY_API_KEY}`,{mode:'cors'})
             const data = await response.json()
-            console.log(data)
             setSlideEvents(data._embedded.attractions)
         }
 

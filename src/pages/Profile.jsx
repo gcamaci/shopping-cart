@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/profile.css"
 const Profile = ({artistInfo, getEventCode}) => {
  
-  console.log(artistInfo.upcoming_events)
-  console.log(artistInfo)
+  
   const shows = artistInfo.upcoming_events.map((show,index) => (
     <div className="event-card" key={index}>
       <div className="date-time">
@@ -20,7 +19,7 @@ const Profile = ({artistInfo, getEventCode}) => {
       </div>
       
       <div className="shop-link">
-      <Link to="/shop" id={show.show_id} onClick={getEventCode}>See Tickets</Link>
+        <Link to="/shop" className="event-btn" id={show.show_id} onClick={getEventCode}>See Tickets</Link>
       </div>
     </div>
     

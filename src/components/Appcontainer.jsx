@@ -31,7 +31,6 @@ const AppContainer = () => {
         const code = data._embedded.attractions[0].id
         const eventResponse = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${code}&apikey=${import.meta.env.VITE_APP_MY_API_KEY}`,{mode:'cors'});
         const eventData = await eventResponse.json();
-        console.log(data )
 
         const showData = {
           name:data._embedded.attractions[0].name,
@@ -58,7 +57,7 @@ const AppContainer = () => {
     }
     const searchCode = (e) => {
       setCurrentEvent(e.target.id)
-      console.log(e.target.id)
+      
     }
     useEffect(() => {
       if(debouncedSearchTerm){
