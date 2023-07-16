@@ -13,7 +13,8 @@ function formatEvents(shows){
         date: newDate,
         time: newTime,
         day: weekday,
-        venue: show._embedded.venues[0].name
+        venue: show._embedded.venues[0].name,
+        venue_location: `${show._embedded.venues[0].city.name}, ${show._embedded.venues[0].state.name}`
       }
     });
     console.log(formattedShows)

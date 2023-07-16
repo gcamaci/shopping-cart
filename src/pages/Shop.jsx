@@ -21,7 +21,8 @@ const ShopView = ({ shopCode }) => {
                     venue_name: eventResponse._embedded.venues[0].name,
                     date: dayjs(eventResponse.dates.start.dateTime).format('ddd, MMM D'),
                     time: dayjs(eventResponse.dates.start.dateTime).format('h:mm A'),
-                    venue_location: eventResponse._embedded.venues[0]
+                    venue_location: `${eventResponse._embedded.venues[0].city.name}, ${eventResponse._embedded.venues[0].state.name}`,
+                    image: eventResponse.images[0].url
                 }
 
                 console.log(formatedEventInfo)
@@ -39,7 +40,24 @@ const ShopView = ({ shopCode }) => {
 
     },[shopCode])
     return (
-        <div></div>
+        <div className="shop-page">
+            <div className="ticket-nav-container">
+                <div className="artist-tag">
+                    <div>
+                        <h1 className="tag-name">{eventInfo.name}</h1>
+                        <p>{eventInfo.venue_name}</p>
+                        <p>{eventInfo.venue_location}</p>
+                        <p>{`${eventInfo.date} at ${eventInfo.time}`}</p>
+                    </div>
+                    
+                    <img className="artist-tag-img" src={eventInfo.image}></img>
+                </div>
+                <div className="ticket-nav">
+                    
+
+                </div>
+            </div>
+        </div>
         
     )
 }

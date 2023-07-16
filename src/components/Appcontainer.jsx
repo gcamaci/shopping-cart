@@ -3,11 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar"
 import Home from "../pages/Home";
 import Profile from '../pages/Profile';
-import Comedy from '../pages/Comedy'
-import ConcertPage from "../pages/Concerts";
-import SportsPage from "../pages/Sports";
-import TheaterPage from "../pages/Theatre";
-import Cart from "../pages/Cart";
 import ShopView from "../pages/Shop"
 import { useState, useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
@@ -71,11 +66,7 @@ const AppContainer = () => {
             <Routes>
               <Route path="/" element={<Home setProfile={setSearchResult}/>} />
               <Route path="/profile" element={<Profile artistInfo={shows} getEventCode={searchCode}/>} />
-              <Route path="/comedy" element={<Comedy />}/>
-              <Route path="/concerts" element={<ConcertPage />} />
-              <Route path="/sports" element={<SportsPage />} />
-              <Route path="/theatre" element={<TheaterPage />} />
-              <Route path="/cart" element={<Cart />} />
+            
               <Route path="/shop" element={<ShopView shopCode={currentEvent} />} />
             </Routes>
         </BrowserRouter>

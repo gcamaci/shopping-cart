@@ -1,0 +1,40 @@
+.shop-page{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 90vh;
+}
+
+.ticket-nav-container{
+    border: 1px solid red;
+    grid-column: 1/4;
+    grid-row: 1/13;
+    display: flex;
+    flex-direction: column;
+}
+.artist-tag{
+    width: 100%;
+    position: relative;
+    flex: 1;
+    border: 1px solid red;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.artist-tag-img{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.tag-name{
+    z-index: 1;
+}
+
+.ticket-nav{
+    flex:3;
+    border: 1px solid red;
+}
