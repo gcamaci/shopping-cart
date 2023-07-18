@@ -11,6 +11,7 @@ import { formatEvents } from "../utils/formatEvent";
 const AppContainer = () => {
     const [currentEvent, setCurrentEvent] = useState('')
     const [searchResult, setSearchResult] = useState('')
+    const [cartItems, setCartItems] = useState({})
     //debounce hook, delay the search term by 3 seconds 
     const debouncedSearchTerm = useDebounce(searchResult,300)
     const [shows,setShows] = useState({
@@ -66,8 +67,7 @@ const AppContainer = () => {
             <Routes>
               <Route path="/" element={<Home setProfile={setSearchResult}/>} />
               <Route path="/profile" element={<Profile artistInfo={shows} getEventCode={searchCode}/>} />
-            
-              <Route path="/shop" element={<ShopView shopCode={currentEvent} />} />
+              <Route path="/shop" element={<ShopView shopCode={currentEvent} addCart={setCartItems}/>} />
             </Routes>
         </BrowserRouter>
       </div>

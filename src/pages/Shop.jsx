@@ -4,8 +4,9 @@ import dayjs from "dayjs";
 import customParseFormat from 'dayjs'
 dayjs.extend(customParseFormat)
 
-const ShopView = ({ shopCode }) => {
-    const [eventInfo, setEventInfo] = useState({})
+const ShopView = ({ shopCode, addCart }) => {
+    const [eventInfo, setEventInfo] = useState({});
+    const [isTicketList, setShop] = useState('true');
     useEffect(() => {
     
         const getEventInfo =  async () => {
@@ -53,7 +54,8 @@ const ShopView = ({ shopCode }) => {
                     <img className="artist-tag-img" src={eventInfo.image}></img>
                 </div>
                 <div className="ticket-nav">
-                    
+                    {/* we can put router here to switch to checkout? */}
+
 
                 </div>
             </div>
