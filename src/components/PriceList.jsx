@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import "../styles/pricelist.css"
 export default function PriceList({price}){
     const [prices, setPrices] = useState([])
     useEffect(() => {
@@ -13,21 +13,21 @@ export default function PriceList({price}){
             priceList.sort()
             setPrices(priceList)
         }
-        randomPrices
+        randomPrices()
     },[price])
     return (
-        <div>
-            <div>
-                {prices.map((cost,index) => {
-                    return (
-                        <div key={index} className="price-card">
-                            <p>General Admission</p>
-                            <p>{`$${cost}`}</p>
-                        </div>
-                    )
-                })}
-            </div>
-            
+        <div className="price-container">
+            {prices.map((cost,index) => {
+                return (
+                    <div key={index} className="price-card">
+                        <p>General Admission</p>
+                        <p>{`$${cost}`}</p>
+                    </div>
+                )
+            })}
         </div>
+
+            
+        
     )
 }

@@ -55,13 +55,10 @@ const ShopView = ({ shopCode, addCart }) => {
                         <p>{eventInfo.venue_location}</p>
                         <p>{`${eventInfo.date} at ${eventInfo.time}`}</p>
                     </div>
-                    
                     <img className="artist-tag-img" src={eventInfo.image}></img>
                 </div>
                 <div className="ticket-nav">
-                    {isTicketList ? <PriceList /> : <ShowSelection />}
-                    <button onClick={handleClick}>Toggle</button>
-
+                    {isTicketList ? <PriceList price={300}/> : <ShowSelection />}
                 </div>
             </div>
         </div>
