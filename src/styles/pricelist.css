@@ -1,3 +1,29 @@
 .price-container{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.price-card{
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    border-radius: 10px;
+}
+.price-card:hover{
+    background-color: #ce3197;
+
+}
+
+.ga-tag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-info-tag{
+    display: flex;
+    gap: 10px;
 }

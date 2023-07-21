@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "../styles/pricelist.css"
-export default function PriceList({price}){
+export default function PriceList({ price, switchPage}){
     const [prices, setPrices] = useState([])
     useEffect(() => {
         function randomPrices(){
@@ -19,9 +19,15 @@ export default function PriceList({price}){
         <div className="price-container">
             {prices.map((cost,index) => {
                 return (
-                    <div key={index} className="price-card">
-                        <p>General Admission</p>
-                        <p>{`$${cost}`}</p>
+                    <div key={index} id={cost} className="price-card" onClick={switchPage}>
+                        <p>{`$${cost} ea`}</p>
+                        <div className="ga-tag">
+                            <p>General Admission</p>
+                            <div className="card-info-tag">
+                                <p>1-6 tickets</p>
+                                <p>Instant Delivery</p>
+                            </div>
+                        </div>
                     </div>
                 )
             })}
