@@ -1,0 +1,56 @@
+.show-selection-container{
+    height: 100%;
+    border: 1px solid red;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticket-info-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.ticket-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.price-tag{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.super-seller{
+    display: flex;
+    gap: 5px;
+}
+
+.quantity-purchase-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.selection-container{
+    flex-grow: 1;
+}
+
+.checkout-btn-container{
+    flex-grow:1;
+}
+#quantity-select{
+    width:100%;
+    height: 3rem;
+}
+#checkout-btn{
+    width: 100%;
+    height: 3rem;
+}
+
+.ticket-text-icon{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

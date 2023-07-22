@@ -11,10 +11,11 @@ const ShopView = ({ shopCode, addCart }) => {
     const [isTicketList, setShop] = useState(true);
    
     function addPriceToInfo(e){
-        const newPrice = e.target.id;
+        console.log(e.currentTarget.id)
+        const newPrice = e.currentTarget.id;
         setEventInfo(prevState => ({
             ...prevState,
-            price: newPrice
+            price: newPrice,
 
         }));
         setShop(!isTicketList)
@@ -35,7 +36,7 @@ const ShopView = ({ shopCode, addCart }) => {
                     time: dayjs(eventResponse.dates.start.dateTime).format('h:mm A'),
                     venue_location: `${eventResponse._embedded.venues[0].city.name}, ${eventResponse._embedded.venues[0].state.name}`,
                     image: eventResponse.images[0].url,
-                    price:""
+                    
                 }
 
                 console.log(formatedEventInfo)

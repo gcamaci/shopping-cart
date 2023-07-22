@@ -18,8 +18,9 @@ export default function PriceList({ price, switchPage}){
     return (
         <div className="price-container">
             {prices.map((cost,index) => {
+                console.log(cost)
                 return (
-                    <div key={index} id={cost} className="price-card" onClick={switchPage}>
+                    <div key={index} id={`${cost}`} className="price-card" onClick={switchPage}>
                         <p>{`$${cost} ea`}</p>
                         <div className="ga-tag">
                             <p>General Admission</p>
