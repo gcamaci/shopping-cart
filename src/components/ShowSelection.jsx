@@ -1,9 +1,9 @@
 import "../styles/showSelection.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCertificate, faRightLeft, faCalendar, faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom"
 
-export default function ShowSelection({info}){
-    console.log(info)
+export default function ShowSelection({info, setQuantity, setCart}){
     return (
         <div className="show-selection-container">
             <div className="ticket-info-container">
@@ -21,7 +21,7 @@ export default function ShowSelection({info}){
             </div>
             <div className="quantity-purchase-container">
                 <div className="selection-container">
-                    <select id='quantity-select'>
+                    <select id='quantity-select' onChange={setQuantity}>
                         <option value='1'>1 Ticket</option>
                         <option value='2'>2 Tickets</option>
                         <option value="3">3 Tickets</option>
@@ -29,7 +29,7 @@ export default function ShowSelection({info}){
                     </select>
                 </div>
                 <div className="checkout-btn-container">
-                    <button id="checkout-btn">Go To Checkout</button>
+                    <Link to="/checkout"><button id="checkout-btn" onClick={setCart}>Checkout</button></Link>
                 </div>
             </div>
             <div className="ticket-info">
@@ -54,6 +54,10 @@ export default function ShowSelection({info}){
                     </div>
                     <p>{info.venue_location}</p>
                 </div>
+            </div>
+            <div>
+                <h3>Notes</h3>
+                <p>Please note that you will need to use an iOS or Android mobile device to gain entry to your event.</p>
             </div>
         </div>
     )

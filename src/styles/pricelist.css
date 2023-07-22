@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .price-card{
     display: flex;
     gap: 40px;
     padding: 20px;
-    border-bottom: 1px solid grey;
+    box-shadow: 0 0 1px;
     align-items: center;
     border-radius: 10px;
 }
 .price-card:hover{
-    background-color: #ce3197;
+    background-color: #f25bbd;
 
 }
 

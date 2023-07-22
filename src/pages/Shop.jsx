@@ -20,6 +20,18 @@ const ShopView = ({ shopCode, addCart }) => {
         }));
         setShop(!isTicketList)
     }
+
+    function addToCart(){
+        addCart(eventInfo)
+    }
+    function adjustQuantity(e){
+       const newQuantity = parseInt(e.target.value)
+       setEventInfo(prevState => ({
+        ...prevState,
+        quantity: newQuantity
+
+       }));
+    }
     useEffect(() => {
         const getEventInfo =  async () => {
             try {
@@ -36,6 +48,8 @@ const ShopView = ({ shopCode, addCart }) => {
                     time: dayjs(eventResponse.dates.start.dateTime).format('h:mm A'),
                     venue_location: `${eventResponse._embedded.venues[0].city.name}, ${eventResponse._embedded.venues[0].state.name}`,
                     image: eventResponse.images[0].url,
+                    quantity:1,
+
                     
                 }
 
@@ -66,7 +80,8 @@ const ShopView = ({ shopCode, addCart }) => {
                     <img className="artist-tag-img" src={eventInfo.image}></img>
                 </div>
                 <div className="ticket-nav">
-                    {isTicketList ? <PriceList price={300} switchPage={addPriceToInfo}/> : <ShowSelection info={eventInfo}/>}
+                    {isTicketList ? <PriceList price={300} switchPage={addPriceToInfo}/>
+                     : <ShowSelection info={eventInfo} setQuantity={adjustQuantity} setCart={addToCart}/>}
                 </div>
             </div>
         </div>

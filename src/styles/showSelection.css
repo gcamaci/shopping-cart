@@ -1,10 +1,10 @@
 .show-selection-container{
     height: 100%;
-    border: 1px solid red;
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    justify-content: space-around;
 }
 
 .ticket-info-container{
@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 .price-tag{
     display: flex;
@@ -29,7 +30,6 @@
 
 .quantity-purchase-container{
     display: flex;
-    justify-content: space-between;
     gap: 10px;
 }
 
@@ -38,15 +38,21 @@
 }
 
 .checkout-btn-container{
-    flex-grow:1;
+    flex-grow: 1;
 }
 #quantity-select{
     width:100%;
     height: 3rem;
+    border-radius: 10px;
 }
 #checkout-btn{
     width: 100%;
     height: 3rem;
+    background-color: #ef39c1;
+    text-decoration: none;
+    border:none;
+    border-radius:10px;
+    
 }
 
 .ticket-text-icon{

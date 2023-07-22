@@ -1,0 +1,79 @@
+.checkout-page{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+    height: 90vh;
+}
+
+.form-container{
+    grid-column: 1/8;
+    grid-row: 1/13;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.cart-info{
+    grid-column: 8/13;
+    grid-row: 1/13;
+    background-color: rgb(246, 246, 251);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    
+}
+.checkout-steps{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+   
+}
+.list-container{
+    width: 100%;
+}
+.fb-btn-container{
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.fb-btn{
+    height: 40px;
+    padding: 10px;
+    width: 15rem;
+}
+
+.email-inpt{
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+#email, #password{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+}
+#continue-btn{
+    width: 250px;
+    height: 3rem;
+}
+.labels{
+    font-size: 20px;
+}
+.radio-inpt-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.radio-containers{
+    display: flex;
+    gap:10px;
+}

@@ -4,6 +4,7 @@ import Navbar from "./Navbar"
 import Home from "../pages/Home";
 import Profile from '../pages/Profile';
 import ShopView from "../pages/Shop"
+import Checkout from "../pages/Checkout"
 import { useState, useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
 import { formatEvents } from "../utils/formatEvent";
@@ -27,13 +28,14 @@ const AppContainer = () => {
         const code = data._embedded.attractions[0].id
         const eventResponse = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${code}&apikey=${import.meta.env.VITE_APP_MY_API_KEY}`,{mode:'cors'});
         const eventData = await eventResponse.json();
-
+        console.log(eventData)
         const showData = {
           name:data._embedded.attractions[0].name,
           id_code: data._embedded.attractions[0].id,
           upcoming_events: formatEvents(eventData._embedded.events),
           image: data._embedded.attractions[0].images[0].url,
-          tourName: data._embedded.attractions[0]
+          tourName: data._embedded.attractions[0],
+          
         };
         setShows(showData) 
       } catch (error){
@@ -68,6 +70,7 @@ const AppContainer = () => {
               <Route path="/" element={<Home setProfile={setSearchResult}/>} />
               <Route path="/profile" element={<Profile artistInfo={shows} getEventCode={searchCode}/>} />
               <Route path="/shop" element={<ShopView shopCode={currentEvent} addCart={setCartItems}/>} />
+              <Route path="/checkout" element={<Checkout eventChoice={cartItems}/>}/>
             </Routes>
         </BrowserRouter>
       </div>
