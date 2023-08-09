@@ -1,55 +1,86 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-black';
+    src: url('../assets/fonts/Poppins/Poppins-Black.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-semi';
+    src: url('../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .profile-page{
     display: grid;
     grid-template-columns: repeat(12,1fr);
+    font-family: 'CustomFont';
     
     
 }
 
 .page-wrapper{
     
-    grid-column:4/10 ;
+    grid-column:3/11 ;
 }
 .artist-banner{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    font-weight: normal;
 }
-
+.artist-banner h1{
+    font-family: 'Poppins-black';
+    font-size: 2.5rem;
+    color:black;
+}
 .artist-img{
     width: 100%;
     border-radius: 16px ;
-    height: 300px;
+    height: 500px;
 
 }
 .card-container{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
     
 }
 .event-card{
-    
     display: flex;
     justify-content: space-between;
-    height: 75px;
     align-items: center;
+    height: 75px;
+    border-bottom:1px solid lightgrey;
+    
+   
+
     
 }
 .day-time{
     display: flex;
     gap: 5px;
 }
+.semi-tag{
+    font-family: 'Poppins-semi';
+    font-size: 1.2rem;
+}
 .date-time{
    flex: 1;
 }
+.time-tag{
+    color: #ef39c1;
+}
+.ven-tag{
+    color: grey;
+}
 .event-tag{
     flex: 2;
-}
-.shop-link{
-   flex:1;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-
 }
 
 .event-btn{
@@ -60,4 +91,8 @@
     border-radius: 5px;
     text-decoration: none;
     color: #ef39c1;
+    transition: all 0.2s ease 0s;
+}
+.event-btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }

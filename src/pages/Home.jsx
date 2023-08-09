@@ -30,19 +30,18 @@ const Home = ({setProfile}) => {
     }
     return (
         <div>
-            <div className="baseball-banner">
-                <div className="baseball-text-container"> 
-                    <h1 className="banner-title">Catch MLB Tickets Today!</h1>
-                    <h2 className="banner-caption">Buy MLB Tickets, <span className="span">Earn Rewards</span></h2>
-                    <Link className="banner-link" to="/sports">Find Tickets</Link>
+            <div className="event-banner">
+                <div className="event-text-container"> 
+                    <h1 className="banner-title">Being there is all that matters.</h1>
+                    <h2 className="banner-caption">Buy Tickets, <span className="span">Earn Rewards</span></h2>
                 </div>
             </div>
             <div className="event-slide-container">
                 <ul className="category-container">
-                    <li id="Sports" onClick={genreSearch}>Sports</li>
-                    <li id="music" onClick={genreSearch}>Concerts</li>
-                    <li id="Comedy" onClick={genreSearch}>Comedy</li>
-                    <li id="Musical" onClick={genreSearch}>Theater</li>
+                    <li id="Sports" className="" onClick={genreSearch}>Sports</li>
+                    <li id="music" className="" onClick={genreSearch}>Concerts</li>
+                    <li id="Comedy" className="" onClick={genreSearch}>Comedy</li>
+                    <li id="Musical"  className="" onClick={genreSearch}>Theater</li>
                 </ul>
                 <div className="event-container">
                     {attractionList.map((attraction,index) => {
@@ -58,7 +57,7 @@ const Home = ({setProfile}) => {
                     })}
                 </div>
             </div>
-            <RewardsBanner></RewardsBanner>      
+            <RewardsBanner></RewardsBanner>     
         </div>
     )
 }

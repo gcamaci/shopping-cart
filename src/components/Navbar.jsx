@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import searchIcon from "../assets/search.png"
+import searchIcon from "../assets/images/search.png"
+import VividLogo from "../assets/images/vivid-transparent.png"
 import "../styles/navbar.css"
 const Navbar = ({ search, result}) => {
     return (
-        <div className="header">
+        <div className="header">    
 
             <div className="logo">
-                <h1>Vivid Views</h1>
+                <img className="img-logo" src={VividLogo}></img>
 
             </div>
             <div className="search-container">
@@ -39,7 +40,6 @@ const Navbar = ({ search, result}) => {
                 <li className="list-item">
                     <Link className="link-item" to="/theatre">Theater</Link>
                 </li>
-                <Link className="link-item" to="/cart">Cart</Link>
             </ul>
          
         </div>

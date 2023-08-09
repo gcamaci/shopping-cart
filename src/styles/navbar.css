@@ -1,6 +1,16 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../assets/fonts/Poppins/Poppins-Thinitalic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: light;
+}
+
 .header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
     display: flex;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     padding: 20px;
     height: 10vh;
@@ -14,14 +24,24 @@
     padding: 5px;
     border-radius: 25px;
     background-color: white;
+    
 }
 .search-bar{
     flex-grow:1;
     border: none;
+    width: 300px;
+    outline: none;
+    margin: 5px;
+    appearance: none;
+    background-color: none;
+    -moz-appearance: none; 
 }
-.logo{
-    flex-grow: 1;
+
+
+.img-logo{
+    width: 300px;
 }
+
 .link-container{
     display: flex;
     justify-content: end;
@@ -32,9 +52,19 @@
 }
 .list-item{
     list-style: none;
+    font-size: 1.2rem;
+    font-family: 'CustomFont';
+    
+}
+.list-item:hover{
+    background-color: purple;
+    border-radius: 10px;
+
 }
 .link-item {
     text-decoration: none;
     color: white;
+    margin: 5px;
+    
     
 }

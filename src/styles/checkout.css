@@ -46,6 +46,10 @@
     height: 40px;
     padding: 10px;
     width: 15rem;
+    background-color: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 .email-inpt{
@@ -63,6 +67,10 @@
 #continue-btn{
     width: 250px;
     height: 3rem;
+    background-color: #ef39c1;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
 .labels{
     font-size: 20px;

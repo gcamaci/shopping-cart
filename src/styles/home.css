@@ -4,24 +4,46 @@
     box-sizing: border-box;
 }
 
-.baseball-banner{
-    height: 40vh;
+.event-banner{
+    height: 90vh;
     padding: 75px;
     display: flex;
     align-items: center;
     padding-left: 40px;
-    background-image: url('../assets/mlbhero.png');
+    background-image: url('../assets/images/concert.png');
     background-position: center;
     background-repeat: none;
     background-size: cover;
+    font-family: 'Poppins-black';
+    position: relative;
+    
     
 }
+.event-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* This is a black tint. Adjust RGBA values as needed */
+    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with any interactions */
+    z-index: 1; /* Sit above the background image but below the actual content */
+}
 
-.baseball-text-container{
+.event-text-container{
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 20px;  
+    gap: 20px; 
+    width: 60vw;
+    font-weight: 900;
+    z-index: 2;
+}
+.event-text-container h1{
+    font-size: 96px;
+    
+    
 }
 .span{
     color: #ce3197;
@@ -50,6 +72,7 @@
     padding:40px;
     display: flex;
     flex-direction: column;
+    font-family: 'CustomFont';
     
 }
 .category-container{
@@ -83,16 +106,59 @@
    flex: 2;
    
 }
-
+.banner-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* This is a black tint. Adjust RGBA values as needed */
+    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with any interactions */
+    z-index: 1; /* Sit above the background image but below the actual content */
+}
 .banner-container{
-    padding: 40px;
+    margin: 40px;
+    background-image: url("../assets/images/gradient.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins-black';
+}
+
+
+
+.banner{
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    font-family: 'CustomFont';
+    text-align: center;
+    padding: 20px;
     
 }
 
-.banner{
-    background-color: #ce3197;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap:10px;
+.banner h1{
+    font-size: 3rem;
+    z-index: 3;
+    
+}
+.banner p{
+    font-size:1rem;
+    z-index: 3;
+}
+.rewards-img-container{
+    width: 100%;
+    padding: 40px;
+}
+.rewards-img-container img{
+    width: 100%;
+    
 }
