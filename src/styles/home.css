@@ -69,7 +69,7 @@
 
 
 .event-slide-container{
-    padding:40px;
+    margin:40px;
     display: flex;
     flex-direction: column;
     font-family: 'CustomFont';
@@ -80,8 +80,24 @@
     list-style:none;
     gap: 10px;
     font-size: 1.25rem;
+    margin: 10px 0px;
+    align-items: center;
     
 }
+
+.category-container li{
+    width: 100px;
+    text-align: center;
+    border: 1px solid transparent;
+    
+}
+.category-container li:hover{
+    border: 1px solid salmon;
+    border-radius: 5px;
+    background-color: #ce3197;
+    color: white;
+}
+
 
 .event-container{
     display: flex;

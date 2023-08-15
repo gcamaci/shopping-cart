@@ -29,16 +29,16 @@ const Navbar = ({ search, result}) => {
                     <Link className="link-item" to="/">Home</Link>
                 </li>
                 <li className="list-item">
-                    <Link className="link-item" to="/sports">Sports</Link>
+                    Sports
                 </li>
                 <li className="list-item">
-                    <Link className="link-item" to="/concerts">Concerts</Link>
+                    Concerts
                 </li>
                 <li className="list-item">
-                    <Link className="link-item" to="/comedy">Comedy</Link>
+                    Comedy
                 </li>
                 <li className="list-item">
-                    <Link className="link-item" to="/theatre">Theater</Link>
+                    Theater
                 </li>
             </ul>
          
